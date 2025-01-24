@@ -53,7 +53,7 @@ impl<'a> DefaultRenderer<'a> {
   }
 }
 
-impl<'a> Renderer for DefaultRenderer<'a> {
+impl Renderer for DefaultRenderer<'_> {
   fn render(
     &self,
     template: &Template,
@@ -264,7 +264,7 @@ mod tests {
   struct MockExtension {}
 
   impl Extension for MockExtension {
-    fn name(&self) -> &str {
+    fn name(&self) -> &'static str {
       "mock"
     }
 

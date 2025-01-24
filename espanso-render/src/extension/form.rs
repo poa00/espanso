@@ -49,8 +49,8 @@ impl<'a> FormExtension<'a> {
   }
 }
 
-impl<'a> Extension for FormExtension<'a> {
-  fn name(&self) -> &str {
+impl Extension for FormExtension<'_> {
+  fn name(&self) -> &'static str {
     "form"
   }
 
